@@ -95,62 +95,62 @@
 // }
 // areArraysSame([1, 2, 3], [1, 2, 3]) // массивы одинаковые
 // #3. «Виселица» и функции
-const words = ['вода', 'лето', 'море', 'игра']
-const pickWord = () => {
-  return words[Math.floor(Math.random() * words.length)] // смартфон
-}
-const setupAnswerArray = (word) => {
-  let answerArray = []
-  for (let i = 0; i < word.length; i++) {
-    answerArray[i] = '_'
-  }
-  return answerArray
-}
-const getGuess = () => {
-  return prompt(
-    'Угадайте букву или нажмите отмена для выхода из игры'
-  ).toLowerCase()
-}
-const showAnswerAndCongratulatePlayer = () => {
-  return alert('Вы угадали слово : ' + answerArray.join(' '))
-}
-const showPlayerProgress = (answerArray) => {
-  return alert(answerArray.join(' '))
-}
-const updateGameState = (guess, word, answerArray) => {
-  for (let j = 0; j < word.length; j++) {
-    if (word[j] === guess) {
-      answerArray[j] = guess
-      remainingLetters--
+// const words = ['вода', 'лето', 'море', 'игра']
+// const pickWord = () => {
+//   return words[Math.floor(Math.random() * words.length)] // смартфон
+// }
+// const setupAnswerArray = (word) => {
+//   let answerArray = []
+//   for (let i = 0; i < word.length; i++) {
+//     answerArray[i] = '_'
+//   }
+//   return answerArray
+// }
+// const getGuess = () => {
+//   return prompt(
+//     'Угадайте букву или нажмите отмена для выхода из игры'
+//   ).toLowerCase()
+// }
+// const showAnswerAndCongratulatePlayer = () => {
+//   return alert('Вы угадали слово : ' + answerArray.join(' '))
+// }
+// const showPlayerProgress = (answerArray) => {
+//   return alert(answerArray.join(' '))
+// }
+// const updateGameState = (guess, word, answerArray) => {
+//   for (let j = 0; j < word.length; j++) {
+//     if (word[j] === guess) {
+//       answerArray[j] = guess
+//       remainingLetters--
 
-      alert('Есть такая буква')
-    }
-  }
-}
+//       alert('Есть такая буква')
+//     }
+//   }
+// }
 
-const word = pickWord()
-console.log(word)
-const answerArray = setupAnswerArray(word)
-console.log(answerArray)
+// const word = pickWord()
+// console.log(word)
+// const answerArray = setupAnswerArray(word)
+// console.log(answerArray)
 
-let numberOfAttempts = 5 // количество попыток
+// let numberOfAttempts = 5 // количество попыток
 
-let remainingLetters = word.length
+// let remainingLetters = word.length
 
-while (remainingLetters > 0 && numberOfAttempts > 0) {
-  showPlayerProgress(answerArray)
-  let guess = getGuess()
-  numberOfAttempts--
-  if (numberOfAttempts === 0) {
-    alert('Вы использовали все попытки!')
-    break
-  }
-  if (guess === null) {
-    break
-  } else if (guess.length !== 1) {
-    alert('Необходимо ввести одну букву')
-  } else {
-    updateGameState(guess, word, answerArray)
-  }
-}
-showAnswerAndCongratulatePlayer()
+// while (remainingLetters > 0 && numberOfAttempts > 0) {
+//   showPlayerProgress(answerArray)
+//   let guess = getGuess()
+//   numberOfAttempts--
+//   if (numberOfAttempts === 0) {
+//     alert('Вы использовали все попытки!')
+//     break
+//   }
+//   if (guess === null) {
+//     break
+//   } else if (guess.length !== 1) {
+//     alert('Необходимо ввести одну букву')
+//   } else {
+//     updateGameState(guess, word, answerArray)
+//   }
+// }
+// showAnswerAndCongratulatePlayer()
